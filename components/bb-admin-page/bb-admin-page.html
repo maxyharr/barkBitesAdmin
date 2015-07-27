@@ -84,7 +84,10 @@
     Polymer({
       is: 'bb-admin-page',
       properties: {
-      	query: Object
+        selected: {
+          type: String,
+          value: 'none'
+        }
       },
 
       submitPlace: function () {
@@ -100,6 +103,8 @@
 
           self.$.ajax.body = body;
           self.$.ajax.generateRequest();
+        } else {
+          alert("Must Enter a Place ID");
         }
       },
 
